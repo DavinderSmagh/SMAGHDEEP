@@ -1,0 +1,210 @@
+// src/components/Journey.jsx
+import { useEffect } from 'react'
+import { motion } from 'framer-motion'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { Calendar, Music, Code, Star } from 'lucide-react'
+
+gsap.registerPlugin(ScrollTrigger)
+
+const milestones = [
+  {
+    year: "2018",
+    title: "First Steps",
+    description: "Started exploring music and poetry in school days. Wrote my first song lyrics.",
+    icon: Music,
+    color: "#fcd34d",
+  },
+  {
+    year: "2020",
+    title: "Creative Awakening",
+    description: "Began sharing short poems and beats online. Got first 100 followers on Instagram.",
+    icon: Star,
+    color: "#fbbf24",
+  },
+  {
+    year: "2023",
+    title: "Design & Code",
+    description: "Learned graphic design and basic web development. Built my first personal website.",
+    icon: Code,
+    color: "#f59e0b",
+  },
+  {
+    year: "2026",
+    title: "The Journey Continues...",
+    description: "Working on original music, collaborations, and turning dreams into reality.",
+    icon: Calendar,
+    color: "#d97706",
+    current: true,
+  },
+]
+
+export default function Journey() {
+  useEffect(() => {
+    // Timeline line animation
+    gsap.fromTo(
+      ".timeline-line",
+      { height: 0 },
+      {
+        height: "100%",
+        duration: 2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".journey-timeline",
+          start: "top 70%",
+          end: "bottom bottom",
+          scrub: 1,
+        },
+      }
+    )
+
+    // Milestone cards stagger reveal
+    gsap.fromTo(
+      ".milestone-card",
+      { opacity: 0, y: 60 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        stagger: 0.4,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".journey-timeline",
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    )
+
+    // Icon circle pop + line connect
+    milestones.forEach((_, i) => {
+      gsap.fromTo(
+        `.milestone-circle-${i}`,
+        { scale: 0, opacity: 0 },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 0.8,
+          ease: "back.out(1.7)",
+          scrollTrigger: {
+            trigger: `.milestone-card-${i}`,
+            start: "top 85%",
+          },
+        }
+      )
+    })
+  }, [])
+
+  return (
+    <section id="journey" className="section" style={{ background: 'linear-gradient(to bottom, #000, #0a0a0a)' }}>
+      <div style={{ position: 'relative', zIndex: 10, width: '100%', maxWidth: '900px', margin: '0 auto' }}>
+        <h2 style={{
+          textAlign: 'center',
+          fontSize: 'clamp(2.8rem, 8vw, 6.5rem)',
+          marginBottom: '4rem',
+          background: 'linear-gradient(to right, #fcd34d, #fbbf24)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+        }}>
+          My Journey
+        </h2>
+
+        <div className="journey-timeline" style={{ position: 'relative', padding: '2rem 0' }}>
+          {/* Vertical timeline line */}
+          <div style={{
+            position: 'absolute',
+            left: '50%',
+            top: 0,
+            bottom: 0,
+            width: '4px',
+            background: 'rgba(255,255,255,0.08)',
+            transform: 'translateX(-50%)',
+          }}>
+            <div className="timeline-line" style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: 0,
+              background: 'linear-gradient(to bottom, #fcd34d, #fbbf24)',
+              transformOrigin: 'top',
+            }} />
+          </div>
+
+          {/* Milestones */}
+          {milestones.map((milestone, index) => (
+            <div
+              key={index}
+              className={`milestone-card-${index}`}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                margin: '4rem 0',
+                position: 'relative',
+                flexDirection: index % 2 === 0 ? 'row' : 'row-reverse',
+              }}
+            >
+              <div style={{
+                flex: 1,
+                padding: index % 2 === 0 ? '0 4rem 0 0' : '0 0 0 4rem',
+                textAlign: index % 2 === 0 ? 'right' : 'left',
+              }}>
+                <div style={{
+                  background: 'rgba(0,0,0,0.6)',
+                  backdropFilter: 'blur(12px)',
+                  border: '1px solid rgba(255,255,255,0.08)',
+                  borderRadius: '1rem',
+                  padding: '1.5rem 2rem',
+                  boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
+                }}>
+                  <div style={{
+                    fontSize: '1.1rem',
+                    color: '#9ca3af',
+                    marginBottom: '0.5rem',
+                  }}>
+                    {milestone.year}
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.8rem',
+                    marginBottom: '0.75rem',
+                    color: milestone.current ? '#fcd34d' : 'white',
+                  }}>
+                    {milestone.title}
+                  </h3>
+                  <p style={{ color: '#d1d5db', fontSize: '1.05rem' }}>
+                    {milestone.description}
+                  </p>
+                </div>
+              </div>
+
+              {/* Circle + Icon */}
+              <div style={{
+                width: '80px',
+                height: '80px',
+                position: 'relative',
+                zIndex: 2,
+              }}>
+                <div className={`milestone-circle-${index}`} style={{
+                  width: '100%',
+                  height: '100%',
+                  borderRadius: '50%',
+                  background: 'rgba(0,0,0,0.7)',
+                  border: `3px solid ${milestone.color}`,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  boxShadow: `0 0 30px ${milestone.color}40`,
+                }}>
+                  <milestone.icon size={36} style={{ color: milestone.color }} />
+                </div>
+              </div>
+
+              {/* Empty space on alternate side */}
+              <div style={{ flex: 1 }} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
