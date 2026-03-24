@@ -8,6 +8,7 @@ const navLinks = [
   { name: 'Journey', href: '#journey' },
   { name: 'Work', href: '#work' },
   { name: 'Gallery', href: '#gallery' },
+  { name: 'Music', href: '#music' },
   { name: 'Connect', href: '#connect' },
 ]
 

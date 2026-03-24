@@ -234,3 +234,23 @@ button[type="submit"]:hover {
   transform: translateY(-3px);
   box-shadow: 0 15px 30px rgba(245, 158, 11, 0.3);
 }
+
+/* Music Player Pulsing Indicator */
+.pulse {
+  animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(252, 211, 77, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(252, 211, 77, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(252, 211, 77, 0);
+  }
+}

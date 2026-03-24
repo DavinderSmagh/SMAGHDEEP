@@ -34,13 +34,13 @@ const projects = [
   },
   {
     title: "First Music Player Prototype",
-    description: "Simple audio player with playlist, waveform visualizer — early experiment for future singer mode.",
-    tech: ["React", "Howler.js", "Canvas"],
+    description: "Full-featured audio player with playlist, real-time canvas waveform visualizer — singer mode active.",
+    tech: ["React", "Howler.js", "Canvas", "GSAP"],
     icon: Music,
-    link: "#",
+    link: "#music",
     color: "#d97706",
-    comingSoon: true,
   },
+
 ]
 
 export default function CreativeWork() {

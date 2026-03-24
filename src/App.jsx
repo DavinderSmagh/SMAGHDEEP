@@ -4,6 +4,7 @@ import About from './components/About'
 import Journey from './components/Journey'
 import CreativeWork from './components/CreativeWork'
 import Gallery from './components/Gallery'   // ← new
+import MusicPlayer from './components/MusicPlayer'
 import Contact from './components/Contact'
 
 function App() {
@@ -30,6 +31,10 @@ function App() {
 
         <div id="gallery">
           <Gallery />
+        </div>
+
+        <div id="music">
+          <MusicPlayer />
         </div>
 
         <div id="connect">
