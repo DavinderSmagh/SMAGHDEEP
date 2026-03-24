@@ -3,7 +3,7 @@ import Hero from './components/Hero'
 import About from './components/About'
 import Journey from './components/Journey'
 import CreativeWork from './components/CreativeWork'
-// import Gallery from './components/Gallery'   // ← new
+import Gallery from './components/Gallery'   // ← new
 import Contact from './components/Contact'
 
 function App() {
@@ -28,9 +28,9 @@ function App() {
           <CreativeWork />
         </div>
 
-        {/* <div id="gallery">
+        <div id="gallery">
           <Gallery />
-        </div> */}
+        </div>
 
         <div id="connect">
           <Contact />
