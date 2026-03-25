@@ -54,7 +54,7 @@ export default function About() {
         >
           <div className="profile-wrapper">
             <img
-              src="./assets/pict.jpg"
+              src="/assets/pict.jpg"
               alt="Smagh Deep"
               className="profile-photo"
             />
