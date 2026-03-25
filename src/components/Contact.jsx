@@ -118,7 +118,7 @@ export default function Contact() {
           transition={{ delay: 1.5, duration: 1 }}
           style={{ marginTop: '5rem', color: '#6b7280', fontSize: '0.875rem' }}
         >
-          © {new Date().getFullYear()} Smagh Deep • Made with passion
+          © {new Date().getFullYear()} Smagh Deep • Made with passion & ❤
         </motion.p>
       </div>
     </section>
