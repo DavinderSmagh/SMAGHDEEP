@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -8,9 +9,24 @@ import MusicPlayer from './components/MusicPlayer'
 import Contact from './components/Contact'
 
 function App() {
+  const [theme, setTheme] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('theme') || 'dark'
+    }
+    return 'dark'
+  })
+
+  useEffect(() => {
+    document.body.dataset.theme = theme
+    localStorage.setItem('theme', theme)
+  }, [theme])
+
+  const toggleTheme = () => {
+    setTheme((currentTheme) => (currentTheme === 'dark' ? 'light' : 'dark'))
+  }
   return (
-    <div className="relative bg-black min-h-screen">
-      <Navbar />
+    <div className="relative min-h-screen">
+      <Navbar theme={theme} onToggleTheme={toggleTheme} />
 
       <main>
         <div id="hero">

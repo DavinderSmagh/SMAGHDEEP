@@ -41,7 +41,7 @@ export default function About() {
   }, [])
 
   return (
-    <section id="about" className="section about-section" style={{ background: 'linear-gradient(to bottom, #000, #111)' }}>
+    <section id="about" className="section about-section" style={{ background: 'var(--section-bg)' }}>
       <div className="about-bg" />
 
       <div style={{ position: 'relative', zIndex: 10, maxWidth: '1280px', margin: '0 auto', padding: '0 1.5rem', display: 'grid', gap: '4rem', gridTemplateColumns: '1fr 1fr', alignItems: 'center' }}>
@@ -71,11 +71,11 @@ export default function About() {
             About Smagh Deep
           </h2>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem', fontSize: '1.25rem', color: '#e5e7eb' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem', fontSize: '1.25rem', color: 'var(--text-secondary)' }}>
             <p className="about-text-line">I'm Smagh Deep — a dreamer, creator, and soul on a mission to turn feelings into art.</p>
             <p className="about-text-line">From the streets of Chandigarh to the stages of imagination, I live to tell stories that hit deep — whether through words, sound, visuals, or pure emotion.</p>
             <p className="about-text-line">Right now I'm exploring music, poetry, design, and everything that makes the heart beat faster.</p>
-            <p className="about-text-line" style={{ fontWeight: '600', color: '#fcd34d', fontSize: '1.5rem' }}>
+            <p className="about-text-line" style={{ fontWeight: '600', color: 'var(--accent)', fontSize: '1.5rem' }}>
               One day this space might become a full music universe. Until then — this is me, raw and real.
             </p>
           </div>
@@ -96,14 +96,14 @@ export default function About() {
                 style={{
                   textAlign: 'center',
                   padding: '1.25rem',
-                  border: '1px solid rgba(255,255,255,0.1)',
+                  border: '1px solid var(--panel-border)',
                   borderRadius: '1rem',
-                  background: 'rgba(0,0,0,0.4)',
+                  background: 'var(--panel-bg)',
                   backdropFilter: 'blur(8px)'
                 }}
               >
-                <div style={{ color: '#9ca3af', fontSize: '0.95rem' }}>{item.label}</div>
-                <div style={{ color: '#fcd34d', fontSize: '1.5rem', fontWeight: 'bold', marginTop: '0.5rem' }}>
+                <div style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>{item.label}</div>
+                <div style={{ color: 'var(--accent)', fontSize: '1.5rem', fontWeight: 'bold', marginTop: '0.5rem' }}>
                   {item.value}
                 </div>
               </motion.div>

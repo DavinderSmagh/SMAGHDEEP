@@ -10,7 +10,7 @@ const socialLinks = [
 
 export default function Contact() {
   return (
-    <section id="connect" className="section" style={{ background: 'linear-gradient(to top, #000, #111, #000)' }}>
+    <section id="connect" className="section" style={{ background: 'var(--section-bg)' }}>
       <div style={{
         position: 'absolute',
         inset: 0,
@@ -67,8 +67,8 @@ export default function Contact() {
                 width: '80px',
                 height: '80px',
                 borderRadius: '9999px',
-                background: 'rgba(255,255,255,0.05)',
-                border: '1px solid rgba(255,255,255,0.1)',
+                background: 'var(--panel-bg)',
+                border: '1px solid var(--panel-border)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -76,7 +76,7 @@ export default function Contact() {
               }}>
                 <link.icon size={36} style={{ color: '#fcd34d' }} />
               </div>
-              <span style={{ marginTop: '1rem', color: '#9ca3af', fontSize: '1rem' }}>
+              <span style={{ marginTop: '1rem', color: 'var(--text-secondary)', fontSize: '1rem' }}>
                 {link.label}
               </span>
             </motion.a>
@@ -91,9 +91,9 @@ export default function Contact() {
           style={{ maxWidth: '512px', margin: '0 auto' }}
         >
           <form style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-            <input type="text" placeholder="Your Name" style={{ padding: '1.25rem 1.5rem', background: 'rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '0.75rem', color: 'white', fontSize: '1.1rem' }} />
-            <input type="email" placeholder="Your Email" style={{ padding: '1.25rem 1.5rem', background: 'rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '0.75rem', color: 'white', fontSize: '1.1rem' }} />
-            <textarea rows="5" placeholder="Your Message..." style={{ padding: '1.25rem 1.5rem', background: 'rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '0.75rem', color: 'white', fontSize: '1.1rem', resize: 'vertical' }} />
+            <input type="text" placeholder="Your Name" style={{ padding: '1.25rem 1.5rem', background: 'var(--input-bg)', border: '1px solid var(--input-border)', borderRadius: '0.75rem', color: 'var(--fg)', fontSize: '1.1rem' }} />
+            <input type="email" placeholder="Your Email" style={{ padding: '1.25rem 1.5rem', background: 'var(--input-bg)', border: '1px solid var(--input-border)', borderRadius: '0.75rem', color: 'var(--fg)', fontSize: '1.1rem' }} />
+            <textarea rows="5" placeholder="Your Message..." style={{ padding: '1.25rem 1.5rem', background: 'var(--input-bg)', border: '1px solid var(--input-border)', borderRadius: '0.75rem', color: 'var(--fg)', fontSize: '1.1rem', resize: 'vertical' }} />
             <button type="submit" style={{
               padding: '1.25rem 3rem',
               background: 'linear-gradient(to right, #f59e0b, #fbbf24)',

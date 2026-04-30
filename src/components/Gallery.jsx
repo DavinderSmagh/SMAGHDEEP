@@ -114,7 +114,7 @@ export default function Gallery() {
   }
 
   return (
-    <section id="gallery" className="section" style={{ background: '#080808', padding: '120px 0' }}>
+    <section id="gallery" className="section" style={{ background: 'var(--section-bg)', padding: '120px 0' }}>
       <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
         
         <header style={{ textAlign: 'center', marginBottom: '4rem' }}>
@@ -143,9 +143,9 @@ export default function Gallery() {
                 style={{
                   padding: '0.8rem 2rem',
                   borderRadius: '3rem',
-                  border: filter === cat ? '1px solid #fcd34d' : '1px solid rgba(255,255,255,0.1)',
+                  border: filter === cat ? '1px solid var(--accent)' : '1px solid var(--panel-border)',
                   background: filter === cat ? 'rgba(252, 211, 77, 0.1)' : 'transparent',
-                  color: filter === cat ? '#fcd34d' : '#888',
+                  color: filter === cat ? 'var(--accent)' : 'var(--muted)',
                   fontSize: '0.9rem',
                   fontWeight: 600,
                   textTransform: 'uppercase',
@@ -180,7 +180,7 @@ export default function Gallery() {
                   borderRadius: '1.5rem',
                   overflow: 'hidden',
                   cursor: 'pointer',
-                  background: '#111'
+                  background: 'var(--panel-bg)'
                 }}
               >
                 <div style={{ 
@@ -210,7 +210,7 @@ export default function Gallery() {
                   <div style={{
                     position: 'absolute',
                     inset: 0,
-                    background: 'linear-gradient(to top, rgba(0,0,0,0.9), transparent 50%)',
+                    background: 'var(--panel-overlay)',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'flex-end',
@@ -222,7 +222,7 @@ export default function Gallery() {
                   onMouseLeave={(e) => e.currentTarget.style.opacity = 0}
                   >
                     <span style={{ color: '#fcd34d', fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', marginBottom: '0.5rem' }}>{item.category}</span>
-                    <h3 style={{ fontSize: '1.8rem', fontWeight: 600, color: '#fff' }}>{item.title}</h3>
+                    <h3 style={{ fontSize: '1.8rem', fontWeight: 600, color: 'var(--fg)' }}>{item.title}</h3>
                   </div>
                 </div>
               </motion.div>
@@ -240,7 +240,7 @@ export default function Gallery() {
               style={{
                 position: 'fixed',
                 inset: 0,
-                background: 'rgba(0,0,0,0.98)',
+                background: 'var(--overlay-solid)',
                 zIndex: 1000,
                 display: 'flex',
                 alignItems: 'center',
@@ -251,7 +251,7 @@ export default function Gallery() {
             >
               <button 
                 onClick={prevImage}
-                style={{ position: 'absolute', left: '2rem', background: 'none', border: 'none', color: '#fff', cursor: 'pointer' }}
+                style={{ position: 'absolute', left: '2rem', background: 'none', border: 'none', color: 'var(--fg)', cursor: 'pointer' }}
               >
                 <ChevronLeft size={48} />
               </button>

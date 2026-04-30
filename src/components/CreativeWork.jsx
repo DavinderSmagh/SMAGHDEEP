@@ -88,7 +88,7 @@ export default function CreativeWork() {
   }, [])
 
   return (
-    <section id="work" className="section" style={{ background: 'linear-gradient(to bottom, #0a0a0a, #000)' }}>
+    <section id="work" className="section" style={{ background: 'var(--section-bg)' }}>
       <div style={{ position: 'relative', zIndex: 10, width: '100%', maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
         <h2 style={{
           textAlign: 'center',
@@ -111,12 +111,12 @@ export default function CreativeWork() {
               key={index}
               className={`project-card project-card-${index}`}
               style={{
-                background: 'rgba(0,0,0,0.6)',
+                background: 'var(--panel-bg)',
                 backdropFilter: 'blur(12px)',
-                border: '1px solid rgba(255,255,255,0.08)',
+                border: '1px solid var(--panel-border)',
                 borderRadius: '1.25rem',
                 overflow: 'hidden',
-                boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
+                boxShadow: '0 10px 30px rgba(0,0,0,0.3)',
                 transition: 'transform 0.4s ease, box-shadow 0.4s ease',
                 cursor: 'pointer',
                 position: 'relative',
@@ -136,7 +136,7 @@ export default function CreativeWork() {
                 <h3 style={{
                   fontSize: '1.6rem',
                   marginBottom: '1rem',
-                  color: project.current ? '#fcd34d' : 'white',
+                  color: project.current ? 'var(--accent)' : 'var(--fg)',
                 }}>
                   {project.title}
                   {project.comingSoon && (
@@ -153,7 +153,7 @@ export default function CreativeWork() {
                   )}
                 </h3>
 
-                <p style={{ color: '#d1d5db', marginBottom: '1.5rem', lineHeight: '1.6' }}>
+                <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', lineHeight: '1.6' }}>
                   {project.description}
                 </p>
 
@@ -162,12 +162,12 @@ export default function CreativeWork() {
                     <span
                       key={i}
                       style={{
-                        background: 'rgba(255,255,255,0.05)',
-                        color: '#d1d5db',
+                        background: 'var(--surface)',
+                        color: 'var(--text-secondary)',
                         padding: '0.35rem 0.9rem',
                         borderRadius: '9999px',
                         fontSize: '0.875rem',
-                        border: '1px solid rgba(255,255,255,0.1)',
+                        border: '1px solid var(--panel-border)',
                       }}
                     >
                       {tag}
@@ -180,7 +180,7 @@ export default function CreativeWork() {
         </div>
 
         <div style={{ textAlign: 'center', marginTop: '5rem' }}>
-          <p style={{ color: '#9ca3af', fontSize: '1.1rem' }}>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem' }}>
             More projects and music releases coming soon...
           </p>
         </div>

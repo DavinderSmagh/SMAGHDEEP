@@ -130,7 +130,7 @@ export default function MusicPlayer() {
   };
 
   return (
-    <section id="music" className="section" style={{ background: '#050505', paddingTop: '120px' }}>
+    <section id="music" className="section" style={{ background: 'var(--section-bg)', paddingTop: '120px' }}>
       <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
         
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
@@ -143,18 +143,18 @@ export default function MusicPlayer() {
           }}>
             Music Prototype
           </h2>
-          <p style={{ color: '#888', letterSpacing: '2px', textTransform: 'uppercase' }}>
+          <p style={{ color: 'var(--muted)', letterSpacing: '2px', textTransform: 'uppercase' }}>
             Experimental Singer Mode • Rhythm & Soul
           </p>
         </div>
 
         <div style={{
-          background: 'rgba(255,255,255,0.03)',
+          background: 'var(--panel-bg)',
           backdropFilter: 'blur(20px)',
           borderRadius: '2rem',
           padding: '3rem',
-          border: '1px solid rgba(255,255,255,0.06)',
-          boxShadow: '0 25px 50px -12px rgba(0,0,0,0.5)',
+          border: '1px solid var(--panel-border)',
+          boxShadow: '0 25px 50px -12px rgba(0,0,0,0.3)',
           position: 'relative',
           overflow: 'hidden'
         }}>
@@ -181,7 +181,7 @@ export default function MusicPlayer() {
                 width: '180px',
                 height: '180px',
                 borderRadius: '50%',
-                background: `linear-gradient(135deg, ${currentTrack.color}, #000)`,
+                background: `linear-gradient(135deg, ${currentTrack.color}, var(--section-bg))`,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -193,8 +193,8 @@ export default function MusicPlayer() {
             </motion.div>
 
             <div style={{ flex: 1 }}>
-              <h3 style={{ fontSize: '2.2rem', marginBottom: '0.5rem', color: '#fff' }}>{currentTrack.title}</h3>
-              <p style={{ fontSize: '1.2rem', color: '#fcd34d', marginBottom: '2rem' }}>{currentTrack.artist}</p>
+              <h3 style={{ fontSize: '2.2rem', marginBottom: '0.5rem', color: 'var(--fg)' }}>{currentTrack.title}</h3>
+              <p style={{ fontSize: '1.2rem', color: 'var(--accent)', marginBottom: '2rem' }}>{currentTrack.artist}</p>
 
               {/* Progress Bar */}
               <div style={{ 
@@ -215,14 +215,14 @@ export default function MusicPlayer() {
 
               {/* Controls */}
               <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-                <button onClick={handlePrev} style={{ background: 'none', border: 'none', color: '#fff', cursor: 'pointer', opacity: 0.7 }}><SkipBack size={32} /></button>
+                <button onClick={handlePrev} style={{ background: 'none', border: 'none', color: 'var(--fg)', cursor: 'pointer', opacity: 0.7 }}><SkipBack size={32} /></button>
                 <button 
                   onClick={togglePlay} 
                   style={{ 
                     width: '72px', 
                     height: '72px', 
                     borderRadius: '50%', 
-                    background: '#fcd34d', 
+                    background: 'var(--accent)', 
                     border: 'none', 
                     display: 'flex', 
                     alignItems: 'center', 
@@ -233,12 +233,12 @@ export default function MusicPlayer() {
                 >
                   {isPlaying ? <Pause size={32} color="#000" fill="#000" /> : <Play size={32} color="#000" fill="#000" style={{ marginLeft: '4px' }} />}
                 </button>
-                <button onClick={handleNext} style={{ background: 'none', border: 'none', color: '#fff', cursor: 'pointer', opacity: 0.7 }}><SkipForward size={32} /></button>
+                <button onClick={handleNext} style={{ background: 'none', border: 'none', color: 'var(--fg)', cursor: 'pointer', opacity: 0.7 }}><SkipForward size={32} /></button>
                 
                 <div style={{ marginLeft: 'auto', display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-                  <button onClick={() => setShowPlaylist(!showPlaylist)} style={{ background: 'none', border: 'none', color: showPlaylist ? '#fcd34d' : '#fff', cursor: 'pointer' }}><List size={24} /></button>
+                  <button onClick={() => setShowPlaylist(!showPlaylist)} style={{ background: 'none', border: 'none', color: showPlaylist ? 'var(--accent)' : 'var(--fg)', cursor: 'pointer' }}><List size={24} /></button>
                   <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-                    <Volume2 size={20} color="#888" />
+                    <Volume2 size={20} color="var(--muted)" />
                     <input 
                       type="range" 
                       min="0" 
@@ -285,10 +285,10 @@ export default function MusicPlayer() {
                     }}
                   >
                     <div>
-                      <div style={{ color: i === currentIdx ? '#fcd34d' : '#fff', fontWeight: 600 }}>{track.title}</div>
-                      <div style={{ color: '#666', fontSize: '0.9rem' }}>{track.artist}</div>
+                      <div style={{ color: i === currentIdx ? 'var(--accent)' : 'var(--fg)', fontWeight: 600 }}>{track.title}</div>
+                      <div style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>{track.artist}</div>
                     </div>
-                    {i === currentIdx && isPlaying && <div className="pulse" style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#fcd34d' }} />}
+                    {i === currentIdx && isPlaying && <div className="pulse" style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--accent)' }} />}
                   </div>
                 ))}
               </motion.div>

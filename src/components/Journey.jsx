@@ -96,7 +96,7 @@ export default function Journey() {
   }, [])
 
   return (
-    <section id="journey" className="section" style={{ background: 'linear-gradient(to bottom, #000, #0a0a0a)' }}>
+    <section id="journey" className="section" style={{ background: 'var(--section-bg)' }}>
       <div style={{ position: 'relative', zIndex: 10, width: '100%', maxWidth: '900px', margin: '0 auto' }}>
         <h2 style={{
           textAlign: 'center',
@@ -117,7 +117,7 @@ export default function Journey() {
             top: 0,
             bottom: 0,
             width: '4px',
-            background: 'rgba(255,255,255,0.08)',
+            background: 'var(--panel-border)',
             transform: 'translateX(-50%)',
           }}>
             <div className="timeline-line" style={{
@@ -150,16 +150,16 @@ export default function Journey() {
                 textAlign: index % 2 === 0 ? 'right' : 'left',
               }}>
                 <div style={{
-                  background: 'rgba(0,0,0,0.6)',
+                  background: 'var(--panel-bg)',
                   backdropFilter: 'blur(12px)',
-                  border: '1px solid rgba(255,255,255,0.08)',
+                  border: '1px solid var(--panel-border)',
                   borderRadius: '1rem',
                   padding: '1.5rem 2rem',
-                  boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
+                  boxShadow: '0 10px 30px rgba(0,0,0,0.3)',
                 }}>
                   <div style={{
                     fontSize: '1.1rem',
-                    color: '#9ca3af',
+                    color: 'var(--text-secondary)',
                     marginBottom: '0.5rem',
                   }}>
                     {milestone.year}
@@ -167,11 +167,11 @@ export default function Journey() {
                   <h3 style={{
                     fontSize: '1.8rem',
                     marginBottom: '0.75rem',
-                    color: milestone.current ? '#fcd34d' : 'white',
+                    color: milestone.current ? 'var(--accent)' : 'var(--fg)',
                   }}>
                     {milestone.title}
                   </h3>
-                  <p style={{ color: '#d1d5db', fontSize: '1.05rem' }}>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem' }}>
                     {milestone.description}
                   </p>
                 </div>
@@ -188,7 +188,7 @@ export default function Journey() {
                   width: '100%',
                   height: '100%',
                   borderRadius: '50%',
-                  background: 'rgba(0,0,0,0.7)',
+                  background: 'var(--panel-bg)',
                   border: `3px solid ${milestone.color}`,
                   display: 'flex',
                   alignItems: 'center',
