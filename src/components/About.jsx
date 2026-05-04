@@ -5,6 +5,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
+const profileImage = new URL('../../assets/pict.jpg', import.meta.url).href
+
 export default function About() {
   useEffect(() => {
     gsap.fromTo(
@@ -44,7 +46,7 @@ export default function About() {
     <section id="about" className="section about-section" style={{ background: 'var(--section-bg)' }}>
       <div className="about-bg" />
 
-      <div style={{ position: 'relative', zIndex: 10, maxWidth: '1280px', margin: '0 auto', padding: '0 1.5rem', display: 'grid', gap: '4rem', gridTemplateColumns: '1fr 1fr', alignItems: 'center' }}>
+      <div className="about-grid" style={{ position: 'relative', zIndex: 10, maxWidth: '1280px', margin: '0 auto', padding: '0 1.5rem' }}>
         <motion.div
           initial={{ opacity: 0, scale: 0.94 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -54,7 +56,7 @@ export default function About() {
         >
           <div className="profile-wrapper">
             <img
-              src="./assets/pict.jpg"
+              src={profileImage}
               alt="Smagh Deep"
               className="profile-photo"
             />
@@ -68,24 +70,24 @@ export default function About() {
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent'
           }}>
-            About Smagh Deep
+            About
           </h2>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem', fontSize: '1.25rem', color: 'var(--text-secondary)' }}>
-            <p className="about-text-line">I'm Smagh Deep — a dreamer, creator, and soul on a mission to turn feelings into art.</p>
-            <p className="about-text-line">From the streets of Chandigarh to the stages of imagination, I live to tell stories that hit deep — whether through words, sound, visuals, or pure emotion.</p>
-            <p className="about-text-line">Right now I'm exploring music, poetry, design, and everything that makes the heart beat faster.</p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem', fontSize: '1.25rem', color: 'var(--text-secondary' }}>
+            <p className="about-text-line">I'm Davinder Singh — a Software QA Tester with a passion for building things that just work.</p>
+            <p className="about-text-line">From Mohali, Punjab, I spend my days breaking apps so users don't have to — hunting bugs, validating APIs, and making sure every tap and click feels smooth and intentional.</p>
+            <p className="about-text-line">With hands-on experience in manual mobile testing, Postman API testing, MongoDB, and Flutter-based apps, I bridge the gap between developers and a flawless user experience.</p>
             <p className="about-text-line" style={{ fontWeight: '600', color: 'var(--accent)', fontSize: '1.5rem' }}>
-              One day this space might become a full music universe. Until then — this is me, raw and real.
+              One bug at a time — I'm on a mission to make software cleaner, faster, and better for everyone who uses it.
             </p>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '1.5rem', marginTop: '4rem' }}>
             {[
-              { label: "Based in", value: "Chandigarh" },
-              { label: "Age", value: "Young & Free" },
-              { label: "Passions", value: "Music · Poetry · Design" },
-              { label: "Currently", value: "Creating & Dreaming" },
+              { label: "Based in", value: "Mohali, Punjab" },
+              { label: "Experience", value: "1+ Year" },
+              { label: "Passions", value: "Testing · Tech · Building" },
+              { label: "Currently", value: "Breaking Bugs & Building Skills" },
             ].map((item, i) => (
               <motion.div
                 key={i}

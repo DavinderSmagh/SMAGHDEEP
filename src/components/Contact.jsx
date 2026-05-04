@@ -1,14 +1,37 @@
 import { motion } from 'framer-motion'
-import { Mail, Instagram, Youtube, Music, Send } from 'lucide-react'
+import { Mail, Instagram, Send } from 'lucide-react'
+import { useState } from 'react'
 
 const socialLinks = [
-  { icon: Instagram, label: 'Instagram', href: '#' },
-  { icon: Youtube, label: 'YouTube', href: '#' },
-  { icon: Music, label: 'Spotify (Coming Soon)', href: '#' },
-  { icon: Mail, label: 'Email Me', href: 'mailto:smaghdeep@example.com' },
+  { icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/smaghdeep03?igsh=amQxanBmZHYzZGZv&utm_source=qr' },
+  // { icon: Youtube, label: 'YouTube', href: '#' },
+  // { icon: Music, label: 'Spotify (Coming Soon)', href: '#' },
+  { icon: Mail, label: 'Email Me', href: 'mailto:idavinderdeep@gmail.com?subject=wellcome🤝' },
 ]
 
 export default function Contact() {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      const result = await response.json();
+      if (response.ok) {
+        alert(result.message);
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        alert(result.error);
+      }
+    } catch (error) {
+      alert('Error sending message');
+    }
+  };
+
   return (
     <section id="connect" className="section" style={{ background: 'var(--section-bg)' }}>
       <div style={{
@@ -41,8 +64,8 @@ export default function Contact() {
           transition={{ delay: 0.3, duration: 1 }}
           style={{ fontSize: '1.25rem', color: '#d1d5db', maxWidth: '768px', margin: '0 auto 4rem' }}
         >
-          Whether it's music, ideas, collabs, or just a good conversation — I'm always open.<br />
-          Drop a message or find me on the platforms below.
+        
+          Whether it's code , freelance work, suggestions or just a good conversation — I'm always open. Drop a message or find me on the platforms below.
         </motion.p>
 
         <motion.div
@@ -90,10 +113,10 @@ export default function Contact() {
           transition={{ delay: 0.9, duration: 1 }}
           style={{ maxWidth: '512px', margin: '0 auto' }}
         >
-          <form style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-            <input type="text" placeholder="Your Name" style={{ padding: '1.25rem 1.5rem', background: 'var(--input-bg)', border: '1px solid var(--input-border)', borderRadius: '0.75rem', color: 'var(--fg)', fontSize: '1.1rem' }} />
-            <input type="email" placeholder="Your Email" style={{ padding: '1.25rem 1.5rem', background: 'var(--input-bg)', border: '1px solid var(--input-border)', borderRadius: '0.75rem', color: 'var(--fg)', fontSize: '1.1rem' }} />
-            <textarea rows="5" placeholder="Your Message..." style={{ padding: '1.25rem 1.5rem', background: 'var(--input-bg)', border: '1px solid var(--input-border)', borderRadius: '0.75rem', color: 'var(--fg)', fontSize: '1.1rem', resize: 'vertical' }} />
+          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            <input type="text" placeholder="Your Name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} style={{ padding: '1.25rem 1.5rem', background: 'var(--input-bg)', border: '1px solid var(--input-border)', borderRadius: '0.75rem', color: 'var(--fg)', fontSize: '1.1rem' }} />
+            <input type="email" placeholder="Your Email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} style={{ padding: '1.25rem 1.5rem', background: 'var(--input-bg)', border: '1px solid var(--input-border)', borderRadius: '0.75rem', color: 'var(--fg)', fontSize: '1.1rem' }} />
+            <textarea rows="5" placeholder="Your Message..." value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} style={{ padding: '1.25rem 1.5rem', background: 'var(--input-bg)', border: '1px solid var(--input-border)', borderRadius: '0.75rem', color: 'var(--fg)', fontSize: '1.1rem', resize: 'vertical' }} />
             <button type="submit" style={{
               padding: '1.25rem 3rem',
               background: 'linear-gradient(to right, #f59e0b, #fbbf24)',

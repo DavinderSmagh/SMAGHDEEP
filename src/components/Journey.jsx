@@ -3,38 +3,38 @@ import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { Calendar, Music, Code, Star } from 'lucide-react'
+import { Bug, Music , Code, Star } from 'lucide-react'
 
 gsap.registerPlugin(ScrollTrigger)
 
 const milestones = [
   {
-    year: "2018",
+    year: "2024",
     title: "First Steps",
-    description: "Started exploring music and poetry in school days. Wrote my first song lyrics.",
-    icon: Music,
+    description: "Started exploring code and programing in college days. Hands on experiance making interaction with websites using code .",
+    icon: Code,
     color: "#fcd34d",
   },
   {
     year: "2020",
-    title: "Creative Awakening",
-    description: "Began sharing short poems and beats online. Got first 100 followers on Instagram.",
+    title: "Creative",
+    description: "Began making the short projects like calculator and todo app. Also learned the basics of Software testing.",
     icon: Star,
     color: "#fbbf24",
   },
   {
     year: "2023",
     title: "Design & Code",
-    description: "Learned graphic design and basic web development. Built my first personal website.",
+    description: "Learned more about the basic web development. Built my first personal website.",
     icon: Code,
     color: "#f59e0b",
   },
   {
     year: "2026",
     title: "The Journey Continues...",
-    description: "Working on original music, collaborations, and turning dreams into reality.",
-    icon: Calendar,
-    color: "#d97706",
+    description: "Working as a Software QA Tester ,Taking hands-on experience in manual mobile testing",
+    icon: Bug,
+    color: "#f59e0b",
     current: true,
   },
 ]

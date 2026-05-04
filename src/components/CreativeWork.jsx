@@ -19,7 +19,7 @@ const projects = [
   {
     title: "Task Manager App",
     description: "Full-featured todo app with localStorage persistence, dark mode, drag & drop, filters — clean React architecture.",
-    tech: ["React", "Context API", "LocalStorage", "Tailwind"],
+    tech: ["React", "LocalStorage"],
     icon: Code,
     link: "#",
     color: "#fbbf24",
@@ -33,11 +33,11 @@ const projects = [
     color: "#f59e0b",
   },
   {
-    title: "First Music Player Prototype",
+    title: "First Music Player Prototype (scroll down to see...)",
     description: "Full-featured audio player with playlist, real-time canvas waveform visualizer — singer mode active.",
     tech: ["React", "Howler.js", "Canvas", "GSAP"],
     icon: Music,
-    link: "#music",
+    link: "../../src/components/MusicPlayer.jsx",
     color: "#d97706",
   },
 
@@ -181,7 +181,7 @@ export default function CreativeWork() {
 
         <div style={{ textAlign: 'center', marginTop: '5rem' }}>
           <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem' }}>
-            More projects and music releases coming soon...
+            More projects coming soon...
           </p>
         </div>
       </div>

@@ -148,7 +148,7 @@ export default function MusicPlayer() {
           </p>
         </div>
 
-        <div style={{
+        <div className="music-panel" style={{
           background: 'var(--panel-bg)',
           backdropFilter: 'blur(20px)',
           borderRadius: '2rem',
@@ -172,7 +172,7 @@ export default function MusicPlayer() {
             }} 
           />
 
-          <div style={{ display: 'flex', gap: '3rem', alignItems: 'center', position: 'relative', zIndex: 10 }}>
+          <div className="music-grid" style={{ display: 'flex', gap: '3rem', alignItems: 'center', position: 'relative', zIndex: 10 }}>
             {/* Album Art Placeholder */}
             <motion.div 
               animate={{ rotate: isPlaying ? 360 : 0 }}
@@ -214,7 +214,7 @@ export default function MusicPlayer() {
               </div>
 
               {/* Controls */}
-              <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+              <div className="music-controls" style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
                 <button onClick={handlePrev} style={{ background: 'none', border: 'none', color: 'var(--fg)', cursor: 'pointer', opacity: 0.7 }}><SkipBack size={32} /></button>
                 <button 
                   onClick={togglePlay} 

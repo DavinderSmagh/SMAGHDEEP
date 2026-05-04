@@ -2,41 +2,36 @@ import { motion } from 'framer-motion'
 
 export default function Hero() {
   return (
-    <section className="section" style={{ background: 'var(--section-bg)', position: 'relative', overflow: 'hidden' }}>
-      <div style={{
-        position: 'absolute',
-        inset: 0,
-        background: 'var(--panel-overlay)'
-      }} />
+    <section className="section hero-section" style={{ background: 'var(--section-bg)', position: 'relative', overflow: 'hidden' }}>
+      <div className="hero-bg" />
 
       <div style={{ position: 'relative', zIndex: 10, textAlign: 'center', maxWidth: '1280px', margin: '0 auto', padding: '0 1.5rem' }}>
         <motion.div
           initial={{ opacity: 0, y: 60 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
         >
-          <h1 style={{ marginBottom: '1.5rem' }}>
-            SMAGH <span style={{
-              background: 'linear-gradient(to right, #fcd34d, #fbbf24)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent'
-            }}>DEEP</span>
+          <h1 className="gradient-text" style={{ marginBottom: '1.5rem' }}>
+            SMAGH <span>DEEP</span>
           </h1>
 
           <motion.p
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
             transition={{ delay: 0.6, duration: 1.2 }}
             style={{ fontSize: 'clamp(1.25rem, 4vw, 1.875rem)', color: 'var(--text-secondary)', maxWidth: '768px', margin: '0 auto' }}
           >
-            Creative Soul • Storyteller • Dream Chaser<br />
-            Turning moments into memories, silence into sound, vision into reality.
+            I'm Davinder Singh — a Software QA Tester with a passion for building things that just work.<br />
+            From Mohali, Punjab, I spend my days breaking apps so users don't have to — hunting bugs, validating APIs, and making sure every tap and click feels smooth and intentional.
           </motion.p>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
           transition={{ delay: 1.8, duration: 1 }}
           style={{ marginTop: '6rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
         >
