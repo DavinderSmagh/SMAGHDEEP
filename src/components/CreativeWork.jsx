@@ -101,11 +101,7 @@ export default function CreativeWork() {
           Creative Work
         </h2>
 
-        <div className="work-grid" style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
-          gap: '2.5rem',
-        }}>
+        <div className="work-grid">
           {projects.map((project, index) => (
             <motion.div
               key={index}
