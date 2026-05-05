@@ -96,7 +96,7 @@ export default function Journey() {
   }, [])
 
   return (
-    <section id="journey" className="section" style={{ background: 'var(--section-bg)' }}>
+    <section className="section" style={{ background: 'var(--section-bg)' }}>
       <div style={{ position: 'relative', zIndex: 10, width: '100%', maxWidth: '900px', margin: '0 auto' }}>
         <h2 style={{
           textAlign: 'center',

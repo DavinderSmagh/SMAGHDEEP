@@ -43,7 +43,7 @@ export default function About() {
   }, [])
 
   return (
-    <section id="about" className="section about-section" style={{ background: 'var(--section-bg)' }}>
+    <section className="section about-section" style={{ background: 'var(--section-bg)' }}>
       <div className="about-bg" />
 
       <div className="about-grid" style={{ position: 'relative', zIndex: 10, maxWidth: '1280px', margin: '0 auto', padding: '0 1.5rem' }}>

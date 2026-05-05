@@ -33,7 +33,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="connect" className="section" style={{ background: 'var(--section-bg)' }}>
+    <section className="section" style={{ background: 'var(--section-bg)' }}>
       <div style={{
         position: 'absolute',
         inset: 0,

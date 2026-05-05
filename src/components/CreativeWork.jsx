@@ -88,7 +88,7 @@ export default function CreativeWork() {
   }, [])
 
   return (
-    <section id="work" className="section" style={{ background: 'var(--section-bg)' }}>
+    <section className="section" style={{ background: 'var(--section-bg)' }}>
       <div style={{ position: 'relative', zIndex: 10, width: '100%', maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
         <h2 style={{
           textAlign: 'center',

@@ -114,7 +114,7 @@ export default function Gallery() {
   }
 
   return (
-    <section id="gallery" className="section" style={{ background: 'var(--section-bg)', padding: '120px 0' }}>
+    <section className="section" style={{ background: 'var(--section-bg)', padding: '120px 0' }}>
       <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem' }}>
         
         <header style={{ textAlign: 'center', marginBottom: '4rem' }}>

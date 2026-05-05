@@ -4,23 +4,25 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { gsap } from 'gsap';
 import { Play, Pause, SkipForward, SkipBack, Volume2, List, Music as MusicIcon } from 'lucide-react';
 
+const BASE_URL = import.meta.env.BASE_URL || '/';
+
 const playlist = [
   {
     title: "Aint That Bad",
     artist: "Gagan Kooner",
-    url: "../../assets/audio/Aint That Bad - Gagan Kooner.mp3",
+    url: `${BASE_URL}audio/Aint-That-Bad-Gagan_Kooner.mp3`,
     color: "#fcd34d"
   },
   {
     title: "Aroma",
     artist: "Sidhu Moose Wala",
-    url: "../../assets/audio/Aroma - Sidhu Moose Wala.mp3",
+    url: `${BASE_URL}audio/Aroma-Sidhu_Moose_Wala.mp3`,
     color: "#fbbf24"
   },
   {
     title: "Top Fella",
     artist: "Karan Aujla",
-    url: "../../assets/audio/Top Fella - Karan Aujla.mp3",
+    url: `${BASE_URL}audio/Top-Fella-Karan_Aujla.mp3`,
     color: "#f59e0b"
   }
 ];
@@ -52,6 +54,12 @@ export default function MusicPlayer() {
       onpause: () => setIsPlaying(false),
       onstop: () => setIsPlaying(false),
       onend: () => handleNext(),
+      onloaderror: (id, err) => {
+        console.error('Audio load error:', currentTrack.url, err);
+      },
+      onplayerror: (id, err) => {
+        console.error('Audio play error:', currentTrack.url, err);
+      },
     });
 
     return () => {
@@ -130,7 +138,7 @@ export default function MusicPlayer() {
   };
 
   return (
-    <section id="music" className="section" style={{ background: 'var(--section-bg)', paddingTop: '120px' }}>
+    <section className="section" style={{ background: 'var(--section-bg)', paddingTop: '120px' }}>
       <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
         
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
