@@ -6,21 +6,21 @@ import { Play, Pause, SkipForward, SkipBack, Volume2, List, Music as MusicIcon }
 
 const playlist = [
   {
-    title: "Ethereal Journey",
-    artist: "Smagh Deep",
-    url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+    title: "Aint That Bad",
+    artist: "Gagan Kooner",
+    url: "../../assets/audio/Aint That Bad - Gagan Kooner.mp3",
     color: "#fcd34d"
   },
   {
-    title: "Moonlight Beats",
-    artist: "Smagh Deep",
-    url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+    title: "Aroma",
+    artist: "Sidhu Moose Wala",
+    url: "../../assets/audio/Aroma - Sidhu Moose Wala.mp3",
     color: "#fbbf24"
   },
   {
-    title: "Urban Silence",
-    artist: "Smagh Deep",
-    url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+    title: "Top Fella",
+    artist: "Karan Aujla",
+    url: "../../assets/audio/Top Fella - Karan Aujla.mp3",
     color: "#f59e0b"
   }
 ];
