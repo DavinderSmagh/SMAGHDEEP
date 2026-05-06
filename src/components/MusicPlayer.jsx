@@ -169,12 +169,12 @@ export default function MusicPlayer() {
           {/* Visualizer Canvas */}
           <canvas 
             ref={canvasRef} 
-            width={800} 
-            height={150} 
+            width={700} 
+            height={100} 
             style={{ 
               width: '100%', 
-              height: '120px', 
-              marginBottom: '2rem',
+              height: '30px', 
+              marginBottom: '0rem',
               opacity: isPlaying ? 0.8 : 0.3,
               transition: 'opacity 0.5s ease'
             }} 
@@ -186,8 +186,8 @@ export default function MusicPlayer() {
               animate={{ rotate: isPlaying ? 360 : 0 }}
               transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
               style={{
-                width: '180px',
-                height: '180px',
+                width: '100px',
+                height: '100px',
                 borderRadius: '50%',
                 background: `linear-gradient(135deg, ${currentTrack.color}, var(--section-bg))`,
                 display: 'flex',
@@ -197,7 +197,7 @@ export default function MusicPlayer() {
                 flexShrink: 0
               }}
             >
-              <MusicIcon size={64} color="#000" style={{ opacity: 0.6 }} />
+              <MusicIcon size={50} color="#000" style={{ opacity: 0.6 }} />
             </motion.div>
 
             <div style={{ flex: 1 }}>
@@ -227,8 +227,8 @@ export default function MusicPlayer() {
                 <button 
                   onClick={togglePlay} 
                   style={{ 
-                    width: '72px', 
-                    height: '72px', 
+                    width: '55px', 
+                    height: '55px', 
                     borderRadius: '50%', 
                     background: 'var(--accent)', 
                     border: 'none', 

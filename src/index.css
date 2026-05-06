@@ -188,7 +188,7 @@ h2 { font-size: clamp(2.8rem, 8vw, 6.5rem); }
   display: none;
   background: none;
   border: none;
-  color: var(--fg);
+  color: var(--nav-text);
   font-size: 1.8rem;
   cursor: pointer;
 }
@@ -298,16 +298,24 @@ h2 { font-size: clamp(2.8rem, 8vw, 6.5rem); }
   }
 
   .music-grid {
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
   }
 
   .music-grid > div:first-child {
-    margin: 0 auto;
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
   }
 
   .music-controls {
-    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 1rem;
+  }
+
+  .music-controls button {
+    flex-shrink: 0;
   }
 }
 
@@ -323,6 +331,30 @@ h2 { font-size: clamp(2.8rem, 8vw, 6.5rem); }
   .theme-toggle {
     width: 42px;
     height: 42px;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .menu-btn {
+    font-size: 1.5rem;
+  }
+
+  .mobile-link {
+    font-size: 2rem;
+  }
+
+  .music-panel {
+    padding: 2rem 1rem;
+  }
+
+  .music-panel h3 {
+    font-size: 1.8rem !important;
+  }
+
+  .music-panel p {
+    font-size: 1rem !important;
   }
 }
 
