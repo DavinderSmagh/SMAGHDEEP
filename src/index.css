@@ -52,6 +52,11 @@ body[data-theme='light'] {
   --accent-strong: #fbbf24;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
 html, body {
   height: 100%;
   overflow-x: hidden;
@@ -73,6 +78,7 @@ body {
   justify-content: center;
   padding: 10rem 1.5rem 8rem;
   position: relative;
+  scroll-margin-top: 100px;
 }
 
 /* Typography */
@@ -255,7 +261,249 @@ h2 { font-size: clamp(2.8rem, 8vw, 6.5rem); }
 }
 
 .music-panel {
+  position: relative;
   display: block;
+  padding: 3rem;
+  border-radius: 2rem;
+  border: 1px solid var(--panel-border);
+  background: var(--panel-bg);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.music-visualizer {
+  width: 100%;
+  height: 64px;
+  display: block;
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.music-grid {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.music-art {
+  width: 120px;
+  min-width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.18);
+}
+
+.music-meta {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.music-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.music-header h3 {
+  margin-bottom: 0.45rem;
+  font-size: clamp(1.85rem, 2.2vw, 2.5rem);
+}
+
+.music-tag {
+  display: inline-block;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+.music-subtitle {
+  color: var(--accent);
+  font-size: 1rem;
+}
+
+.music-badge {
+  margin-left: auto;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  background: rgba(252, 211, 77, 0.12);
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+.music-progress {
+  cursor: pointer;
+  margin-bottom: 1.75rem;
+}
+
+.music-progress-track {
+  position: relative;
+  width: 100%;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.music-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+  border-radius: 999px;
+  transition: width 0.15s ease;
+}
+
+.music-progress-time {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.85rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.music-control-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.music-button {
+  border: none;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--fg);
+  width: 44px;
+  height: 44px;
+  border-radius: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.music-button:hover,
+.music-button.active {
+  background: rgba(252, 211, 77, 0.18);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.music-play-button {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #111;
+  box-shadow: 0 16px 28px rgba(252, 211, 77, 0.2);
+}
+
+.music-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.music-volume {
+  flex: 1 1 240px;
+  min-width: 180px;
+}
+
+.music-volume input[type='range'] {
+  width: 100%;
+  accent-color: var(--accent);
+}
+
+.playlist-toggle {
+  min-width: 44px;
+}
+
+.playlist-panel {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+}
+
+.playlist-card {
+  width: min(100%, 520px);
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 2rem;
+  padding: 1.5rem;
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.35);
+}
+
+.playlist-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.playlist-header h4 {
+  font-size: 1.25rem;
+}
+
+.playlist-list {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.playlist-item {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.1rem;
+  border-radius: 1.25rem;
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--fg);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.playlist-item:hover {
+  background: rgba(252, 211, 77, 0.08);
+}
+
+.playlist-item.active {
+  background: rgba(252, 211, 77, 0.16);
+  border-color: rgba(252, 211, 77, 0.28);
+}
+
+.playlist-item small {
+  display: block;
+  color: var(--muted);
+  margin-top: 0.2rem;
+}
+
+@media (max-width: 900px) {
+  .music-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .music-art {
+    margin: 0 auto;
+  }
+
+  .music-control-row {
+    justify-content: space-between;
+  }
 }
 
 .music-grid {
