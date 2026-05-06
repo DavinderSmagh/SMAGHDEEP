@@ -506,25 +506,6 @@ h2 { font-size: clamp(2.8rem, 8vw, 6.5rem); }
   }
 }
 
-.music-grid {
-  display: flex;
-  gap: 3rem;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.music-grid > div:last-child {
-  flex: 1;
-  min-width: 0;
-}
-
-.music-controls {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
 @media (max-width: 900px) {
   .about-grid {
     grid-template-columns: 1fr;
