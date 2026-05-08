@@ -9,30 +9,30 @@ gsap.registerPlugin(ScrollTrigger)
 
 const milestones = [
   {
-    year: "2024",
+    year: "2019",
     title: "First Steps",
-    description: "Started exploring code and programing in college days. Hands on experiance making interaction with websites using code .",
+    description: "Started exploring code and programing after my school completes and found my passion for technology.Made websites using HTML ,CSS and using blogger platform.",
     icon: Code,
     color: "#fcd34d",
   },
   {
     year: "2020",
     title: "Creative",
-    description: "Began making the short projects like calculator and todo app. Also learned the basics of Software testing.",
+    description: "When i started my college and learned about web development. Began making the short projects like calculator and todo app.",
     icon: Star,
     color: "#fbbf24",
   },
   {
-    year: "2023",
+    year: "2024",
     title: "Design & Code",
-    description: "Learned more about the basic web development. Built my first personal website.",
+    description: "Learned more about the basic web development from an college internship and started making more complex projects like music player and weather app. Started learning about UI/UX design and creating more polished interfaces.",
     icon: Code,
     color: "#f59e0b",
   },
   {
     year: "2026",
     title: "The Journey Continues...",
-    description: "Working as a Software QA Tester ,Taking hands-on experience in manual mobile testing",
+    description: "Working as a Software QA Tester ,Taking hands-on experience in manual mobile testing. Validating APIs, and making sure every tap and click feels smooth and intentional. Using devlopment logics to find the bugs and make sure that the app is working fine.",
     icon: Bug,
     color: "#f59e0b",
     current: true,
@@ -97,7 +97,7 @@ export default function Journey() {
 
   return (
     <section className="section" style={{ background: 'var(--section-bg)' }}>
-      <div style={{ position: 'relative', zIndex: 10, width: '100%', maxWidth: '900px', margin: '0 auto' }}>
+      <div style={{ position: 'relative', padding: '2rem 0' }}>
         <h2 style={{
           textAlign: 'center',
           fontSize: 'clamp(2.8rem, 8vw, 6.5rem)',

@@ -3,7 +3,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
 import Journey from './components/Journey'
-import CreativeWork from './components/CreativeWork'
+// import CreativeWork from './components/CreativeWork'  // ← new
 // import Gallery from './components/Gallery'   // ← new
 import MusicPlayer from './components/MusicPlayer'
 import Contact from './components/Contact'
@@ -41,9 +41,9 @@ function App() {
           <Journey />
         </div>
 
-        <div id="work">
+        {/* <div id="work">
           <CreativeWork />
-        </div>
+        </div> */}
 
         {/* <div id="gallery">
           <Gallery />
