@@ -63,7 +63,7 @@ export default function About() {
           </div>
         </motion.div>
 
-        <div style={{ order: 2, display: 'flex', flexDirection: 'column', gap: '2.5rem' , textAlign: 'center'}} className="about-text">
+        <div style={{ order: 1, display: 'flex', flexDirection: 'column', gap: '2.5rem' , textAlign: 'center'}} className="about-text">
           <h2 style={{
             fontSize: 'clamp(2.8rem, 8vw, 6.5rem)',
             background: 'linear-gradient(to right, #fcd34d, #fbbf24)',
